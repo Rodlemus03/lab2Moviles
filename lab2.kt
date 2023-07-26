@@ -1,5 +1,12 @@
 
+//DATA CLASS
+data class Person(val name: String,val age:Int,val gender:String)
 
+data class Student(val name:String,val age:Int,val gender:String,val studentIt:String)
+//FUNCIONES
+fun mapeoPersonaEstudiante(person:Person):Student{
+    return Student(person.name,person.age,person.gender,"")
+}
 fun calcularPromedio(numeros: List<Double>): Double {
     if (numeros.isEmpty()) {
         throw IllegalArgumentException("La lista no puede estar vacía.")
@@ -19,6 +26,10 @@ fun isPalindrome(cadena:String):Boolean=cadena==cadena.reversed()
 
 fun saludar(nombres: List<String>):List<String>{
     return nombres.map{"Hola: $it"}
+}
+
+fun performOperation(a:Int, b:Int,operacion:(Int,Int)->Int):Int{
+    return operacion(a,b)
 }
 
 
@@ -46,5 +57,10 @@ fun main(){
         print(i+"\n")
     }
     separador()
+    //Ejercicio 5
+    val multiplicacion= performOperation(10,20){a,b->a*b}
+    println("Suma $multiplicacion")
+    separador()
+
 
 }
