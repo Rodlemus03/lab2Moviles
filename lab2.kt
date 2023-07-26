@@ -1,4 +1,5 @@
 
+
 //DATA CLASS
 data class Person(val name: String,val age:Int,val gender:String)
 
@@ -61,6 +62,19 @@ fun main(){
     val multiplicacion= performOperation(10,20){a,b->a*b}
     println("Suma $multiplicacion")
     separador()
+    //Ejercicio 6
+    val listaPersonas= listOf(
+    Person("Julio",20,"Masculino"),
+        Person("Jimena",20,"Femenino"),
+        Person("Santiago",21,"Masculino")
+    )
+
+    val listaEstudiantes=listaPersonas.map{ mapeoPersonaEstudiante(it)}
+    listaEstudiantes.forEach { estudiante ->
+        println("El Estudiante ${estudiante.name} tiene ${estudiante.age} años.")
+    }
+    separador()
+
 
 
 }
